@@ -57,20 +57,20 @@ public class Tabungan {
     }
     
     public void simpan(int input, String id){
-        if (id=="IDR")
+        if ("IDR".equals(id))
             this.saldo+=idrtousd(input);
-        else if (id=="JPY")
+        else if ("JPY".equals(id))
             this.saldo+=jpytousd(input);
     }
     
     public void ambil(int input, String id){
-        if (id=="IDR"){
+        if ("IDR".equals(id)){
             if(status(input, id))
                this.saldo-=idrtousd(input);
             else
                 System.out.println("Saldo tidak mencukupi.");
         }
-        else if (id=="JPY"){
+        else if ("JPY".equals(id)){
             if(status(input, id))
                this.saldo-=jpytousd(input);
             else
@@ -79,9 +79,9 @@ public class Tabungan {
     }
     
     private boolean status(int input, String id){
-        if (id=="IDR")
+        if ("IDR".equals(id))
             return saldo>idrtousd(input);
-        else if (id=="JPY")
+        else if ("JPY".equals(id))
             return saldo>jpytousd(input);
         else{ 
             System.out.println("saldo tidak cukup.");
